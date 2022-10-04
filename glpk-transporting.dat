@@ -1,0 +1,91 @@
+data;
+
+/*Datos parte1*/
+set ZONAS := Z1 Z2 Z3 Z4;
+set DIR_ZONA := X12 X13 X14 X21 X24 X31 X34 X41 X42 X43;
+
+param Scooter :=
+Z1 2
+Z2 4
+Z3 4
+Z4 6;
+
+param Necesita :=
+Z1 0
+Z2 1
+Z3 1
+Z4 0;
+
+param Le_sobra :=
+Z1 1
+Z2 0
+Z3 0
+Z4 1;
+
+param Coste_camino :=
+X12 10
+X13 10
+X14 2
+X21 10
+X24 2
+X31 10
+X34 6
+X41 2
+X42 2
+X43 6;
+
+param Sale_de : Z1 Z2 Z3 Z4 :=
+X12 1 0 0 0
+X13 1 0 0 0
+X14 1 0 0 0
+X21 0 1 0 0
+X24 0 1 0 0
+X31 0 0 1 0
+X34 0 0 1 0
+X41 0 0 0 1
+X42 0 0 0 1
+X43 0 0 0 1;
+
+param Va_a : Z1 Z2 Z3 Z4 :=
+X12 0 1 0 0
+X13 0 0 1 0
+X14 0 0 0 1
+X21 1 0 0 0
+X24 0 0 0 1
+X31 1 0 0 0
+X34 0 0 0 1
+X41 1 0 0 0
+X42 0 1 0 0
+X43 0 0 1 0;
+
+/*datos parte 2*/
+
+set FREELANCERS:=F1 F2 F3 F4;
+set LOCALIZACIONES_SCOOTER :=S11 S12 S13 S21 S22 S31 S32 S33 S34 S41;
+
+param Max_recarga := 3;
+
+param Coste_recarga:F1 F2 F3 F4:=
+S11 50 30 100 10
+S12 50 30 100 10
+S13 50 30 100 10
+S21 20 10 30 50
+S22 20 10 30 50
+S31 10 20 20 70
+S32 10 20 20 70
+S33 10 20 20 70
+S34 10 20 20 70
+S41 60 100 70 20;
+
+param Puede_recargar:F1 F2 F3 F4:=
+S11 0 1 1 1
+S12 0 1 1 1
+S13 0 1 1 1
+S21 1 1 1 1
+S22 1 1 1 1
+S31 1 0 1 1
+S32 1 0 1 1
+S33 1 0 1 1
+S34 1 0 1 1
+S41 1 1 1 1;
+
